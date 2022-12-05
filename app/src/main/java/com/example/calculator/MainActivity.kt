@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun calculateTip() {
         if (!inputDisplay.text.isEmpty()) {
-            if (!operators.contains(last[0]) && last != "." && inputDisplay.text[inputDisplay.text.length-1]!='.') {
+            if (!operators.contains(inputDisplay.text[inputDisplay.text.length-1])  && inputDisplay.text[inputDisplay.text.length-1]!='.') {
                 var calcul = mutableListOf<Any>()
                 var digit= ""
                 for (i in 0..inputDisplay.text.length - 1) {
@@ -156,5 +156,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        else
+            resultField.text="0"
     }
 }
